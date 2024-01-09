@@ -1,0 +1,140 @@
+/* Estilos de la página */
+body {
+  background-color: #000000;
+  max-width: 720px;
+}
+
+h1 {
+  color: #f42069;
+  font-family: 'Ysabeau', sans-serif;
+  font-size: 24px;
+}
+
+a {
+  color: #fff;
+  font-family: 'Ysabeau', sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  padding-bottom: 2rem;
+}
+
+p {
+  color: #d7d7d7;
+  font-size: 10px;
+  display: block;
+}
+
+u {
+  color: #d7d7d7;
+  font-family: 'Ysabeau', sans-serif;
+  font-size: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
+} 
+
+/* Estilos de la barra de navegación */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background-color: #000;
+  border-bottom: 2px solid #f42069;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 990;
+}
+
+#site {
+  position: relative;
+  height: 100%;
+  top: 3rem;
+  justify-content: center;
+  align-items: center;
+  display: flex:
+}
+
+#site img {
+  max-width: 100%;
+  height: 100%;
+}
+
+#bg {
+  position: absolute;
+  width: 100vh;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+#maitoChan {
+  top: 7rem;
+  position: absolute;
+}
+
+#gDtexto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+}
+
+#iCgif {
+  position: absolute;
+}
+
+/* Estilos para elementos del encabezado */
+#logo, #lang, #menu {
+  color: #d7d7d7;
+  font-family: 'Ysabeau', sans-serif;
+  font-size: 24px;
+}
+
+#logo {
+  margin: 0 auto;
+  height: 1.9rem;
+}
+
+#lang {
+  padding-left: 2%;
+}
+
+#menu {
+  padding-right: 2%;
+}
+
+/* Estilos para el menú lateral */
+.side-menu {
+  position: fixed;
+  top: 32px;
+  right: 0;
+  bottom: 0;
+  width: 45%;
+  background-color: #00000096;
+  border-left: 2px dashed #f42069;
+  display: none;
+  z-index: 989;
+}
+
+.side-menu.show {
+  display: block;
+}
+
+/* Estilos para el menú de idiomas */
+.lang-menu {
+  position: fixed;
+  top: 40px;
+  left: 8px;
+  width: 160px;
+  height: 32px;
+  background-color: #00000096;
+  border: 2px dashed #f42069;
+  display: none;
+  z-index: 988;
+}
+
+.lang-menu.show {
+  display: inline;
+}

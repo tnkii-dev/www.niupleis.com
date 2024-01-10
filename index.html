@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
 
     <link rel="canonical" href="http://www.niuplies.com/">
     
@@ -41,7 +41,7 @@
 
     <aside class="side-menu" id="sideMenu">
     <ul>
-      <li><a id="blog" href="http://blog.niupleis.com">blog↗</a></li>s
+      <li><a id="blog" href="http://blog.niupleis.com">blog↗</a></li>
     </ul>
     </aside>
 
@@ -52,10 +52,18 @@
       <u>jp</u>
     </aside-->
 
-    <div id="site">
-      <img id="bg" src="images/maitoChan_codeBG.webp">
-      <img id="gDtexto" src="images/maitoChan_globosDeTexto.webp">
-      <img id="maitoChan" src="images/maitoChan_inConstruction.webp">
-      <img src="images/maitoChan_inConstruction_anim.webp">
+    <script>
+      if (isDesktop()) {
+        toggleMenu();
+      }
+    </script>
+
+    <div class="content">
+      <div id="site">
+        <img id="bg" src="images/maitoChan_codeBG.webp">
+        <img id="gDtexto" src="images/maitoChan_globosDeTexto.webp">
+        <img id="maitoChan" src="images/maitoChan_inConstruction.webp">
+        <img src="images/maitoChan_inConstruction_anim.webp">
+      </div>
     </div>
 </body>

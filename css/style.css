@@ -1,18 +1,35 @@
 /* Estilos de la página */
 body {
-  background-color: #000000;
-  max-width: 720px;
+  min-width: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+* {
+  font-family: 'Ysabeau', sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #ff50d7 #f42069;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #f42069;
+}
+*::-webkit-scrollbar-track {
+  background-color: #ff50d7;
 }
 
 h1 {
   color: #f42069;
-  font-family: 'Ysabeau', sans-serif;
   font-size: 24px;
 }
 
 a {
   color: #fff;
-  font-family: 'Ysabeau', sans-serif;
   font-size: 16px;
   text-decoration: none;
   padding-bottom: 2rem;
@@ -26,7 +43,6 @@ p {
 
 u {
   color: #d7d7d7;
-  font-family: 'Ysabeau', sans-serif;
   font-size: 16px;
   padding-left: 5px;
   padding-right: 5px;
@@ -47,13 +63,80 @@ u {
   z-index: 990;
 }
 
+/* Estilos para elementos del encabezado */
+#logo, #lang, #menu {
+  color: #d7d7d7;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#logo {
+  margin: 0 auto;
+  height: 1.9rem;
+}
+
+#lang {
+  padding-left: 2%;
+}
+
+#menu {
+  padding-right: 2%;
+}
+
+/* Estilos para el menú lateral */
+.side-menu {
+  position: fixed;
+  top: 32px;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  background-color: #000000d7;
+  border-left: 3px solid #f42069;
+  display: none;
+  overflow-y: auto;
+  z-index: 800;
+}
+
+.side-menu.show {
+  display: block;
+}
+
+/* Estilos para el menú de idiomas */
+.lang-menu {
+  position: fixed;
+  top: 40px;
+  left: 8px;
+  width: 160px;
+  height: 32px;
+  background-color: #00000096;
+  border: 2px dashed #f42069;
+  display: none;
+  z-index: 988;
+}
+
+.lang-menu.show {
+  display: inline;
+}
+
+.content {
+  position: absolute;
+  top: 32px;
+  width: 720px;
+  height: 100hv;
+  background-color: #000000d7;
+  border: 3px solid #f42069;
+  padding: 10px;
+}
+
 #site {
   position: relative;
   height: 100%;
   top: 3rem;
   justify-content: center;
   align-items: center;
-  display: flex:
+  display: flex;
 }
 
 #site img {
@@ -83,58 +166,4 @@ u {
 
 #iCgif {
   position: absolute;
-}
-
-/* Estilos para elementos del encabezado */
-#logo, #lang, #menu {
-  color: #d7d7d7;
-  font-family: 'Ysabeau', sans-serif;
-  font-size: 24px;
-}
-
-#logo {
-  margin: 0 auto;
-  height: 1.9rem;
-}
-
-#lang {
-  padding-left: 2%;
-}
-
-#menu {
-  padding-right: 2%;
-}
-
-/* Estilos para el menú lateral */
-.side-menu {
-  position: fixed;
-  top: 32px;
-  right: 0;
-  bottom: 0;
-  width: 45%;
-  background-color: #00000096;
-  border-left: 2px dashed #f42069;
-  display: none;
-  z-index: 989;
-}
-
-.side-menu.show {
-  display: block;
-}
-
-/* Estilos para el menú de idiomas */
-.lang-menu {
-  position: fixed;
-  top: 40px;
-  left: 8px;
-  width: 160px;
-  height: 32px;
-  background-color: #00000096;
-  border: 2px dashed #f42069;
-  display: none;
-  z-index: 988;
-}
-
-.lang-menu.show {
-  display: inline;
 }

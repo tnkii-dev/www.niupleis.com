@@ -7,3 +7,7 @@ function langSelection() {
   var langMenu = document.getElementById('langMenu');
   langMenu.classList.toggle('show');
 }
+
+function isDesktop() {
+  return window.innerWidth > 719;
+}

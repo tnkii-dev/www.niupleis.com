@@ -1,0 +1,156 @@
+body {
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  /*background: url('') center/cover no-repeat fixed;*/
+}
+* {
+  color: #d7d7d7;
+  font-family: 'Ysabeau', sans-serif;
+  padding-left: 5px;
+  padding-right: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: #f3ca4c #efb810;
+}
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #efb810;
+}
+*::-webkit-scrollbar-track {
+  background-color: #f3ca4c;
+} 
+p {
+  font-size: 12px;
+}
+u {
+  font-size: 16px;
+  cursor: pointer;
+} 
+ul, li {
+  list-style-type: none;
+} 
+a {
+  text-decoration: none;
+  font-size: 16px;
+}
+label {
+  line-height: 0.5rem;
+}
+button {
+  background-color: transparent;
+  border: 3px solid #efb810;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background-color: #000;
+  border-bottom: 3px solid #efb810;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 900;
+  font-size: 24px;
+}
+#logo {
+  margin: 0 auto;
+  height: 1.9rem;
+  z-index: 902;
+}
+#menu {
+  padding-right: 2%;
+  z-index: 903;
+}
+.side-menu {
+  position: fixed;
+  top: 32px;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  background-color: #000000d7;
+  border-left: 3px solid #efb810;
+  display: none;
+  overflow-y: auto;
+  z-index: 800;
+}
+.side-menu.show {
+  display: block;
+}
+.side-menu a {
+  color: #efb810;
+  font-size: 24px;
+  cursor: pointer;
+}
+.section a {
+  color: #d7d7d7;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.content {
+  position: absolute;
+  top: 32px;
+  max-width: 720px;
+  width: 100%;
+  background-color: #000000aa;
+  border: 3px solid #efb810;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 300;
+}
+#title {
+  color: #efb810;
+  font-size: 36px;
+  padding-left: 3rem;
+}
+
+.separadorD {
+  color: #f42069;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  z-index: 301;
+}
+
+.separadorM {
+  display: none;
+}
+
+#checkboxes {
+  display: flex;
+}
+.box {
+  width: 30%;
+}
+#resultado {
+  text-align: center;
+}
+.respuesta {
+  translate: 50%;
+  filter: opacity(0%);
+}
+.respuesta.show{
+  filter: opacity(100%);
+}
+
+.foot {
+  text-align: center;
+}
+
+.foot a {
+  color: #d7d7d7;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  z-index: 310;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acordes</title>
+    <meta name="description" content="Estudia acordes con el metodo de repetición espaciada">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="only screen and (max-width: 719px)" href="styleM.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="author" content="tnkii">
+    <script src="script.js"></script>
+    <script>if(window.innerWidth<720){
+      document.write('<script src="acordesM.js"><\/script>');
+    } else {
+      document.write('<script src="acordes.js"><\/script>');
+    }</script>
+</head>
+
+<body>
+    <header class="navbar" id="navBar">
+      <img id="logo" src="res/niupleisLogo.png"/>
+      <nav id="menu" onclick="toggleMenu()">≡</nav>
+    </header>
+    <aside class="side-menu" id="sideMenu">
+      <br><a style="cursor: default;">Documentación</a>
+      <div class="section">
+        <a href="http://blog.niupleis.com/entries/entry.html?id=240323">Blog sobre este proyecto</a><br><br>
+        <a href="https://github.com/tnkii-dev/acordes">Repo (github) (O simplemente ctrl+shift+i)</a><br><br>
+      </div>
+
+    </aside>
+    <script>
+      if (isDesktop()) {
+        toggleMenu();
+      }
+    </script>
+    <div class="content">
+      <h1 id="title">Acordes</h1>
+      <div id="checkboxes">
+      <div class="box">
+        <label><input type="checkbox" id="escalasCheckbox" checked>Escalas (triadas mayores)</label>
+        <p>C, C#, D, D#, E, F, F#, G, G#, A, A#, B</p>
+        <label><input type="checkbox" id="triadasCheckbox" onchange="uncheckArpegio()">Triada</label>
+        <p>maj, M, m, -, aug, +, (#5), dim, °</p>
+        <label><input type="checkbox" id="septimasCheckbox" onchange="uncheckArpegio()">Septimas</label>
+        <p>7, △, M7, ⌀7, 7(♭5), add9, add11, add13</p>
+        <label><input type="checkbox" id="powerChordsCheckbox"onchange="uncheckArpegio()">Power chords</label>
+        <p>5, 3</p>
+      </div>
+      <div class="box">
+        <label><input type="checkbox" id="sextasCheckbox" onchange="uncheckArpegio()">Sextas</label>
+        <p>6, (add♭6), (♭6), ⁶₉</p> 
+        <!--label><input type="checkbox" id="alteradasCheckbox" onchange="uncheckArpegio()">Alteradas</label>
+        <p>alt</p-->
+        <label><input type="checkbox" id="suspendidasCheckbox" onchange="uncheckArpegio()">Suspendidas</label>
+        <p>sus, sus4, sus2</p>
+        <label><input type="checkbox" id="miscelaneasCheckbox" onchange="uncheckArpegio()">Miscelaneas</label>
+        <p>2 y (add2)</p>
+        <label><input type="checkbox" id="extensionesCheckbox" onchange="uncheckArpegio()">Extensiones</label>
+        <p>9, 7(add9), 11 y 13</p>
+      </div>
+      <div class="box">
+        <label><input type="checkbox" id="alteracionesCheckbox" onchange="checkLabels()" onchange="uncheckArpegio()">Alteraciones</label>
+        <p>(omit5), (no5), (omit7), (no7), (#9), (♭9), (#11), (♭11), (#13) y (♭13)</p>
+        <label><input type="checkbox" id="inversionesCheckbox"><del style="color: red;" onchange="uncheckArpegio()">Inversiones</del></label>
+        <p><del style="color: red;">/C, /D, /E, /F, /G, /A y /B</del></p>
+        <label><input type="checkbox" id="arpegioModalCheckbox" onchange="isolateLabel()">Escala Modal</label>
+        <p>jonico, dorico, frigio, lidio, mixolidio, eolico, locrio</p>
+      </div>
+      </div>
+
+      <button onclick="generarAcorde()">Generar Acorde (space)</button>
+      <button onclick="mostrarAcorde()">Mostrar Acorde (Enter)</button>
+      <div style="font-size: 48px;" id="resultado"></div>
+      <div class="respuesta" id="respuesta">
+        <div ><img class="piano" src="res/piano.png" style="translate: -50%; border: 3px solid white;"></div>
+        <div id="1st" style="position: fixed; display: none; translate: -213px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="2maj" style="position: fixed; display: none; translate: -193px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="3maj" style="position: fixed; display: none; translate: -173px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="4jus" style="position: fixed; display: none; translate: -153px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="5jus" style="position: fixed; display: none; translate: -133px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="6maj" style="position: fixed; display: none; translate: -113px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="7maj" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="8va" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="9maj" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="10maj" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="11jus" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="12jus" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="13maj" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {generarAcorde();});
+        document.addEventListener('keydown', function (event) {
+          if (event.code === 'Space') {
+            event.preventDefault();
+            generarAcorde();
+          };
+        });
+        document.addEventListener('keydown', function (event) {
+          if (event.code === 'Enter') {
+            event.preventDefault();
+            mostrarAcorde();
+          };
+        });
+      </script>
+      
+      <br><div class="separadorM">✧ ────── • ────── ♡ ────── • ────── ✧</div>
+      <div class="separadorD">✧ ──────────── • ──────────── ♡ ──────────── • ──────────── ✧</div><br>
+
+      <div class="foot">
+        <a href="blog.niupleis.com">Blog</a>
+        <a>Descargas</a>
+        <a>Contacto</a>
+        <a href="../visit/">Visita Niupleis</a>
+        <a href="../donate/">Donaciones</a>
+        <a>Condiciones de uso</a>
+      </div>
+    </div>
+</body>

@@ -58,12 +58,57 @@
       }
     </script>
 
-    <div class="content">
+    <style>
+      main {
+        display: flex; position: fixed; width: 100%; justify-content: center; z-index: 999;
+      }
+      @media (max-width:720px){
+        main {
+        display: block; position: fixed; width: 100%; z-index: 999;
+      }}
+    </style>
+    <main>
+      <style>
+        .mainUnderCons {
+          position: fixed;
+          display: flex;
+          bottom: 0.5rem;
+          width: 70%;
+          max-width: 320px;
+          justify-content: center;
+          background-color: #33003388;
+          backdrop-filter: blur(3px);
+          border-radius: 20px;
+          border-radius: 20px;
+          z-index: 999;
+        }
+        .mainUnderCons p {
+          font-size: 1.5rem;
+          position: absolute;
+          padding: 5px;
+          background-color: #ff50d7bb;
+          backdrop-filter: blur(0px);
+          border-radius: 10px;
+          bottom: 1rem;
+        }
+        .mainUnderCons img {
+          width: 100%;
+          aspect-ratio: 9/16;
+          border-radius: 20px;
+        }
+      </style>
+      <aside class="mainUnderCons">
+        <p>Site Under Construction</p>
+        <img src="images/maidChan_UnderCons.png">
+      </aside>
+    </main>
+
+    <!--div class="content">
       <div id="site">
         <img id="bg" src="images/maitoChan_codeBG.webp">
         <img id="gDtexto" src="images/maitoChan_globosDeTexto.webp">
         <img id="maitoChan" src="images/maitoChan_inConstruction.webp">
         <img src="images/maitoChan_inConstruction_anim.webp">
       </div>
-    </div>
+    </div-->
 </body>
